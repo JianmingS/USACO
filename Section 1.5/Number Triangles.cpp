@@ -1,6 +1,6 @@
 /*
 
-DPÃ‚
+DP È¢ò
 
 dp[j] = max(dp[j - 1] + tgl[i-1][j], dp[j] + tgl[i-1][j]);
 
