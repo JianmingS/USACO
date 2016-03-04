@@ -1,5 +1,9 @@
 /*
+
 DP ¼´¿É½â
+
+dp[j] = max(dp[j - 1] + tgl[i-1][j], dp[j] + tgl[i-1][j]);
+
 */
 
 #define _CRT_SECURE_NO_WARNINGS
