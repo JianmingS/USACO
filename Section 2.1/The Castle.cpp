@@ -45,7 +45,7 @@ struct Node
 {
     // (x, y)代表房间坐标 
     // z代表拆的(x, y)房间哪面墙，z只会代表两种可能N,E
-	int x, y, z;
+    int x, y, z;
 };
 
 bool Cmp(const Node &nd1, const Node &nd2)
