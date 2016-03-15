@@ -97,8 +97,7 @@ void removeWall()
 	{
 		for (int y = 0; y < N; ++y)
 		{
-            // 只要考虑去拆一个房间的北面、东面墙就好了
-			for (int i = 1; i <= 2; ++i)
+			for (int i = 1; i <= 2; ++i) // 只要考虑去拆一个房间的北面、东面墙就好了
 			{
 				if (castle[x][y] & direction[i])
 				{
