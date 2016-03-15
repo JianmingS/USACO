@@ -38,7 +38,7 @@ const int MaxM = 55;
 int castle[MaxN][MaxM];
 bool visited[MaxN][MaxM];
 int N, M;
-const int direction[4] = { 1, 2, 4, 8 };
+const int direction[4] = { 1, 2, 4, 8 }; // 西 北 东 南
 const int step[4][2] = { {0, -1}, {-1, 0}, {0, 1}, {1, 0} };
 
 struct Node
@@ -97,7 +97,8 @@ void removeWall()
 	{
 		for (int y = 0; y < N; ++y)
 		{
-			for (int i = 0; i < 4; ++i)
+            // 只要考虑去拆一个房间的北面、东面墙就好了
+			for (int i = 1; i <= 2; ++i)
 			{
 				if (castle[x][y] & direction[i])
 				{
