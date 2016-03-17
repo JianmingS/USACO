@@ -45,7 +45,7 @@ int Gcd(int a, int b)
 	return Gcd(b, a%b);
 }
 
-// double 比较函数需要自己写，否则在USACO测试平台上，map无法滤掉相同的double值
+// double 比较函数需要自己写，否则在USACO测试平台上，map无法滤掉相同的double键值
 struct classcomp { 
 	bool operator() (const double& lhs, const double& rhs) const
 	{
