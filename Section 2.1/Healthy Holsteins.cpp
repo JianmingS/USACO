@@ -1,6 +1,6 @@
 /*
 枚举所有饲料种类能产生的组合，判断出满足条件的组合。
-复杂度：N*(2^M)
+时间复杂度：N*(2^M)
 注：
 	N:the number of types of vitamins
 	M:the number of types of feeds available
