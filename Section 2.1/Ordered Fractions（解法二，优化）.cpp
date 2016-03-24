@@ -1,4 +1,7 @@
 /*
+枚举+筛选+排序
+*/
+/*
 ID: Jming
 PROG: frac1
 LANG: C++
