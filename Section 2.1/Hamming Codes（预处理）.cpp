@@ -1,6 +1,6 @@
 /*
 枚举
-时间复杂度：O（（(2^B)-1）*N*B）
+预先处理出codewords间的Hamming distance，保存在数组中。
 */
 /*
 ID: Jming
@@ -32,13 +32,14 @@ typedef long long int64;
 const int INF = 0x3f3f3f3f;
 const int modPrime = 3046721;
 const double eps = 1e-9;
-const int MaxN = 30;
+const int MaxN = (1<<8) + 10;
 const int MaxM = 20;
 
 int N, B, D;
 vector<int> ans;
+int dis[MaxN][MaxN];
 
-bool isLegal(int x, int y)
+int hamDis(int x, int y)
 {
 	int z = x^y;
 	int cnt = 0;
@@ -50,7 +51,19 @@ bool isLegal(int x, int y)
 		}
 		z >>= 1;
 	}
-	return (cnt >= D);
+	return cnt;
+}
+
+void ini()
+{
+	int maxVal = (1 << B);
+	for (int i = 0; i < maxVal; ++i)
+	{
+		for (int j = i + 1; j < maxVal; ++j)
+		{
+			dis[i][j] = hamDis(i, j);
+		}
+	}
 }
 
 void Solve()
@@ -63,7 +76,7 @@ void Solve()
 		bool judge = true;
 		for (int i = 0; i < ans.size(); ++i)
 		{
-			if (!isLegal(val, ans[i]))
+			if (dis[ans[i]][val] < D)
 			{
 				judge = false;
 				break;
@@ -109,6 +122,7 @@ int main()
 	freopen("hamming.in", "r", stdin);
 	freopen("hamming.out", "w", stdout);
 	scanf("%d %d %d", &N, &B, &D);
+	ini();
 	Solve();
 	output();
 
