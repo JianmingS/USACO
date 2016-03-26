@@ -114,6 +114,7 @@ int main()
 
 	freopen("preface.in", "r", stdin);
 	freopen("preface.out", "w", stdout);
+	
 	ini(one, "IVX");
 	ini(ten, "XLC");
 	ini(hundred, "CDM");
