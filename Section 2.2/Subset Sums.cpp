@@ -41,6 +41,7 @@ const int MaxM = 20;
 int N;
 int goal;
 int ans = 0;
+
 // 注意：需为long long类型
 long long dp[(((1 + MaxN)*MaxN) >> 2) + 10];
 
