@@ -217,7 +217,7 @@ void Solve()
 	{
 		if (C&1)
 		{
-			// C<4且奇数
+			// C>4且奇数
 			getAns(3, start);
 		}
 		else
