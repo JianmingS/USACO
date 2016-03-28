@@ -1,5 +1,5 @@
 /*
-发现规律，可生成出个、十、白、千的罗马数字。
+发现规律，可生成出个、十、百、千的罗马数字。
 然后，直接1~N枚举，统计字符出现次数。
 */
 /*
@@ -114,7 +114,7 @@ int main()
 
 	freopen("preface.in", "r", stdin);
 	freopen("preface.out", "w", stdout);
-	
+
 	ini(one, "IVX");
 	ini(ten, "XLC");
 	ini(hundred, "CDM");
