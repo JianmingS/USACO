@@ -32,6 +32,7 @@
 
 */
 
+
 /*
 ID: Jming
 PROG: lamps
@@ -214,7 +215,7 @@ void Solve()
 	}
 	else
 	{
-		if (C % 2)
+		if (C&1)
 		{
 			// C<4且奇数
 			getAns(3, start);
