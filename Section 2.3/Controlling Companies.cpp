@@ -55,7 +55,7 @@ void Solve()
 		{
 			for (int j = 1; j < MaxN; ++j)
 			{
-				if ((i != j) && !controlling[i][j])
+				if (!controlling[i][j])
 				{
 					int sum = 0;
 					for (int k = 1; k < MaxN; ++k)
