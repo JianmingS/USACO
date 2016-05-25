@@ -77,6 +77,22 @@ void changeDit(int &dit)
 }
 
 
+void move(int &x, int &y, int &dit)
+{
+	int x_tmp = x + step[dit][0];
+	int y_tmp = y + step[dit][1];
+
+	if (!posLegal(x_tmp) || !posLegal(y_tmp) || Map[x_tmp][y_tmp] == '*')
+	{
+		changeDit(dit);
+	}
+	else
+	{
+		x = x_tmp;
+		y = y_tmp;
+	}
+}
+
 void Solve(int fmX, int fmY, int cX, int cY, int ditF, int ditC, int time)
 {
 	if ((fmX == cX) && (fmY == cY))
@@ -85,29 +101,8 @@ void Solve(int fmX, int fmY, int cX, int cY, int ditF, int ditC, int time)
 		return;
 	}
 
-	int fmX_tmp = fmX + step[ditF][0];
-	int fmY_tmp = fmY + step[ditF][1];
-
-	if (!posLegal(fmX_tmp) || !posLegal(fmY_tmp) || Map[fmX_tmp][fmY_tmp] == '*')
-	{
-		changeDit(ditF);
-	}else
-	{
-		fmX = fmX_tmp;
-		fmY = fmY_tmp;
-	}
-
-	int cX_tmp = cX + step[ditC][0];
-	int cY_tmp = cY + step[ditC][1];
-
-	if (!posLegal(cX_tmp) || !posLegal(cY_tmp) || Map[cX_tmp][cY_tmp] == '*')
-	{
-		changeDit(ditC);
-	}else
-	{
-		cX = cX_tmp;
-		cY = cY_tmp;
-	}
+	move(fmX, fmY, ditF);
+	move(cX, cY, ditC);
 
 	if (visited[fmX][fmY][ditF][cX][cY][ditC])
 	{
